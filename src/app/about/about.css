@@ -1,0 +1,13 @@
+.bg-about {
+  background-color: #1abc9c !important;
+  padding: 250px 0 130px 0;
+}
+.title {
+  font-weight: bolder !important;
+  font-size: 40px !important;
+}
+.line {
+  height: 4px;
+  width: 80px;
+  background-color: white;
+}

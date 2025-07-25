@@ -1,0 +1,39 @@
+<div class="container portfolio text-center">
+  <h2 class="pt-3 pb-2 title">PORTFOLIO COMPONENT</h2>
+  <div class="d-flex justify-content-center align-items-center gap-3 pb-3">
+    <div class="line me-1"></div>
+    <i class="fa-solid fa-star me-1"></i>
+    <div class="line me-1"></div>
+  </div>
+
+  <div class="row gy-5 gx-5 pb-3">
+    @for (image of portfolioImages; track $index) {
+    <div class="col-12 col-md-4">
+      <div class="port position-relative" (click)="openImage(image)">
+        <img
+          [src]="image"
+          class="img-fluid rounded w-100 d-block"
+          alt="Portfolio Image"
+        />
+        <div class="overlay d-flex justify-content-center align-items-center">
+          <i class="fa-solid fa-plus text-white"></i>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if(selectedImagePath) {
+  <div class="fullscreen-overlay" (click)="closeImage()">
+    <div
+      class="overlay-content d-flex justify-content-center align-items-center h-100"
+    >
+      <img
+        [src]="selectedImagePath"
+        class="img-fluid rounded zoomed-img"
+        (click)="$event.stopPropagation()"
+      />
+    </div>
+  </div>
+  }
+</div>
